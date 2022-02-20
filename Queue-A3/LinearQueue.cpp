@@ -34,9 +34,14 @@ void qDelete(){
 }
 
 void displayQueue(){
-    cout << "\nThe queue is: ";
-    for (int i=front;i<=rear;i++){
-        cout << Queue[i] << " ";
+    if (front == -1 || front > rear){
+        cout << "\nEmpty list!";
+    }
+    else{
+        cout << "\nThe queue is: ";
+        for (int i=front;i<=rear;i++){
+            cout << Queue[i] << " ";
+        }
     }
 }
 
