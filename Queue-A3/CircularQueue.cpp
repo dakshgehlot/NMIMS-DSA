@@ -2,15 +2,21 @@
 using namespace std;
 #define max 5
 
-int Queue[max], front = -1, rear = -1;
+int Queue[max], front = -1, rear= -1;
 
-void qInsert(){
-    if (rear == max - 1){
+void enQueue(){
+    if (front == 0 && rear == max - 1){
+        cout << "\nOverflow!";
+    }
+    else if (front == rear + 1){
         cout << "\nOverflow!";
     }
     else{
         if (front == -1 && rear == -1){
-        front = rear = 0;
+            front = rear = 0;
+        }
+        else if (rear == max - 1 && front != 0){
+            rear = 0;
         }
         else{
             rear += 1;
@@ -18,11 +24,11 @@ void qInsert(){
         int val;
         cout << "\nEnter the value to be inserted: ";
         cin >> val;
-        Queue[rear] = val;
+        Queue[rear] = val;    
     }
 }
 
-void qDelete(){
+void dQueue(){
     if (front == -1 || front > rear){
         cout << "\nUnderflow!";
     }
@@ -61,11 +67,11 @@ int main()
         switch (choice)
         {
             case 1:
-                qInsert();
+                enQueue();
                 break;
 
             case 2:
-                qDelete();
+                dQueue();
                 break;
 
             case 3:
