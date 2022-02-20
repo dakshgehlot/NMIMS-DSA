@@ -19,7 +19,7 @@ void enQueue(){
             rear = 0;
         }
         else{
-            rear += 1;
+            rear++;
         }
         int val;
         cout << "\nEnter the value to be inserted: ";
