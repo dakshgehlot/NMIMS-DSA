@@ -29,13 +29,24 @@ void enQueue(){
 }
 
 void dQueue(){
-    if (front == -1 || front > rear){
+    if (front == -1){
         cout << "\nUnderflow!";
     }
     else{
         int val = Queue[front];
-        cout << "\nDeleted element: " << val;
-        front += 1;   
+        cout << "\nDeleted element: " << val; 
+    }
+
+    if (front == rear){
+        front = rear = -1;
+    }
+    else{
+        if (front == max - 1){
+            front = 0;
+        }
+        else{
+            front++;
+        }
     }
 }
 
