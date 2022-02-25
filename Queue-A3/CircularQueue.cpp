@@ -28,7 +28,7 @@ void enQueue(){
     }
 }
 
-void dQueue(){
+void deQueue(){
     if (front == -1){
         cout << "\nUnderflow!";
     }
@@ -93,7 +93,7 @@ int main()
                 break;
 
             case 2:
-                dQueue();
+                deQueue();
                 break;
 
             case 3:
