@@ -51,13 +51,24 @@ void dQueue(){
 }
 
 void displayQueue(){
-    if (front == -1 || front > rear){
+    int i;
+    if (front == -1){
         cout << "\nEmpty list!";
     }
     else{
         cout << "\nThe queue is: ";
-        for (int i=front;i<=rear;i++){
-            cout << Queue[i] << " ";
+        if (front < rear){
+            for (i=front;i<=rear;i++){
+                cout << Queue[i] << " ";
+            }
+        }
+        else{
+            for (i=front;i<=max-1;i++){
+                cout << Queue[i] << " ";
+            }
+            for (i=0;i<=rear;i++){
+                cout << Queue[i] << " ";
+            }
         }
     }
 }
