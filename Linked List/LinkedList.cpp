@@ -6,6 +6,17 @@
 // pointer is used to traverse the list.
 // <malloc.h> is used to create and reserve a single block of a node while <calloc.h> is used to insert data to multiple node.
 
+// Application of linked list
+// 1. Implementation of stack
+// 2. Implementation of queue
+// 3. Representation of arithmetic expression (Polymonial)
+
+// Linked Stack
+
+// Algo for pushing item into a stack (linked list  stack)
+// (from Sanyam)
+ 
+
 #include <iostream>
 using namespace std;
 #include <malloc.h>
