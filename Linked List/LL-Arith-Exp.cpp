@@ -80,7 +80,7 @@ struct node *create_poly(struct node *start)
     cout << "Enter power: " << endl;
     cin >> p;
 
-    while (c != -1)
+    while (c != 1)
     {
         if(start == NULL)
         {
@@ -103,10 +103,12 @@ struct node *create_poly(struct node *start)
         }
         cout << "Enter coefficient: " << endl;
         cin >> c;
+        if (c == -1)
+            break;
         cout << "Enter power: " << endl;
         cin >> p;
     }
-    return 0;
+    return start;
 }
 
 struct node *display_poly(struct node *start)
@@ -115,7 +117,7 @@ struct node *display_poly(struct node *start)
     ptr = start;
     while(ptr -> next != NULL)
     {
-        cout << ptr -> coeff << ptr -> pow << endl;
+        cout << ptr -> coeff <<"x"<<"^"<< ptr -> pow << endl;
         ptr = ptr -> next;
     }
     return start;
