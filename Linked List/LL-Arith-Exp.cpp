@@ -27,7 +27,7 @@ int main()
     int option;
     do
     {
-        cout << "1. Enter the first polynomial" << endl;
+        cout << "\n1. Enter the first polynomial" << endl;
         cout << "2. Display first polyomial" << endl;
         cout << "3. Enter the second polynomial" << endl;
         cout << "4. Display second polynomial" << endl;
@@ -36,7 +36,7 @@ int main()
         cout << "7. Subract Polynomials" << endl;
         cout << "8. Display the result" << endl;
         cout << "9. Exit" << endl;
-        cout << "Enter your choice: " << endl;
+        cout << "Enter your choice: ";
 
         cin >> option;
         switch (option)
@@ -146,4 +146,83 @@ struct node *add_poly(struct node *start1, struct node *start2, struct node *sta
             ptr2 = ptr2 -> next;
         }
     }
+    if(ptr1 == NULL){
+        while(ptr2 != NULL){
+            start3 = add_node(start3, ptr2 -> coeff, ptr2 -> pow);
+            ptr2 = ptr2 -> next;
+        }
+    }
+    if(ptr2 == NULL){
+        while(ptr1 != NULL){
+            start3 = add_node(start3, ptr1 -> coeff, ptr1 -> pow);
+            ptr1 = ptr1 -> next;
+        }
+    }
+    return start3;
+}
+
+struct node *sub_poly(struct node *start1, struct node *start2, struct node *start4)
+{
+    struct node *ptr1, *ptr2;
+    int sub_coeff, p;
+    ptr1 = start1, ptr2 = start2;
+    while(ptr1 != NULL && ptr2 != NULL)
+    {
+        if(ptr1 -> pow == ptr2 -> pow)
+        {
+            sub_coeff = ptr1 -> coeff + ptr2 -> coeff;
+            start3 = add_node(start4, sub_coeff, ptr1 -> pow);
+            ptr1 = ptr1 -> next;
+            ptr2 = ptr2 -> next;
+        }
+        else if(ptr1 -> pow > ptr2 -> pow)
+        {
+            start4 = add_node(start4, ptr1 -> coeff, ptr1 -> pow);
+            ptr1 = ptr1 -> next;
+        }
+        else if(ptr1 -> pow < ptr2 -> pow)
+        {
+            sub_coeff = -1 * ptr2 -> coeff;
+            start4 = add_node(start4, sub_coeff, ptr2 -> pow);
+            ptr2 = ptr2 -> next;
+        }
+    }
+    if(ptr1 == NULL){
+        while(ptr2 != NULL){
+            sub_coeff = -1 * ptr2 -> coeff;
+            start4 = add_node(start4, sub_coeff, ptr2 -> pow);
+            ptr2 = ptr2 -> next;
+        }
+    }
+    if(ptr2 == NULL){
+        while(ptr1 != NULL){
+            start4 = add_node(start4, ptr1 -> coeff, ptr1 -> pow);
+            ptr1 = ptr1 -> next;
+        }
+    }
+    return start4;
+}
+
+struct node *add_node(struct node *start, int coeff, int pow){
+    struct node *new_node, *ptr;
+    if(start == NULL)
+    {
+        new_node = (struct node *)malloc(sizeof(struct node));
+        new_node -> coeff = coeff;
+        new_node -> pow = pow;
+        new_node -> next = NULL;
+        start = new_node;
+    }
+    else
+    {
+        ptr = start;
+        while(ptr -> next != NULL)
+            ptr = ptr -> next;
+        new_node = (struct node *)malloc(sizeof(struct node));
+        new_node -> coeff = coeff;
+        new_node -> pow = pow;
+        new_node -> next = NULL;
+        ptr -> next = new_node;
+    }
+    return start;
 }
