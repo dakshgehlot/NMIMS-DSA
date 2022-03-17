@@ -80,7 +80,7 @@ struct node *create_poly(struct node *start)
     cout << "Enter power: " << endl;
     cin >> p;
 
-    while (c != 1)
+    while (c != -1)
     {
         if(start == NULL)
         {
