@@ -2,5 +2,6 @@
     "files.associations": {
         "iostream": "cpp",
         "SLL.C": "cpp"
-    }
+    },
+    "git.ignoreLimitWarning": true
 }
