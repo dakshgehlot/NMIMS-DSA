@@ -3,6 +3,8 @@ using namespace std;
 #include <conio.h>
 #include <malloc.h>
 
+// Daksh Gehlot - N230
+
 struct node
 {
 int data;
@@ -20,7 +22,7 @@ struct node *delete_beg(struct node *);
 struct node *delete_end(struct node *);
 struct node *delete_node(struct node *);
 struct node *delete_after(struct node *);
-struct node *modifiy_node(struct node *);
+struct node *modify_node(struct node *);
 
 int main() {
 
@@ -65,7 +67,7 @@ int main() {
                                     break;
                             case 10: start = delete_after(start);
                                     break;
-                            case 11: start = modifiy_node(start);
+                            case 11: start = modify_node(start);
                             }
 
             }while(option !=12);
@@ -250,7 +252,7 @@ return 0;
                     return start;
             }
         
-        struct node *modifiy_node(struct node *start){
+        struct node *modify_node(struct node *start){
             struct node *ptr;
             int val, new_val;
             cout << "\nEnter the value that has to be changed: ";
@@ -258,7 +260,7 @@ return 0;
             cout << "\nEnter new value: ";
             cin >> new_val;
             ptr = start;
-            while(ptr -> data =! val){
+            while(ptr -> data != val){
                 ptr = ptr -> next;
             }
             ptr -> data = new_val;
