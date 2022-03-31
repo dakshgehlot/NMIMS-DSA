@@ -1,2 +1,2 @@
 # NMIMS-DSA
-This repository contains all my DSA notes assignment codes.
+This repository contains all my DSA notes and assignment codes.
