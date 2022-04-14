@@ -75,7 +75,6 @@ int main()
             break;
         }
     }while (option != 9);
-    getch();
     return 0;
 }
 
@@ -152,7 +151,7 @@ struct node *add_poly(struct node *start1, struct node *start2, struct node *sta
             start3 = add_node(start3, ptr1 -> coeff, ptr1 -> pow);
             ptr1 = ptr1 -> next;
         }
-        else if(ptr1 -> pow < ptr2 -> pow)
+        else if(ptr2 -> pow > ptr1 -> pow)
         {
             start3 = add_node(start3, ptr2 -> coeff, ptr2 -> pow);
             ptr2 = ptr2 -> next;
@@ -173,7 +172,7 @@ struct node *add_poly(struct node *start1, struct node *start2, struct node *sta
     return start3;
 }
 
-struct node *sub_poly(struct node *start1, struct node *start2, struct node *start4)
+struct node *sub_poly(struct node *, struct node *, struct node *start)
 {
     struct node *ptr1, *ptr2;
     int sub_coeff, p;
@@ -182,8 +181,8 @@ struct node *sub_poly(struct node *start1, struct node *start2, struct node *sta
     {
         if(ptr1 -> pow == ptr2 -> pow)
         {
-            sub_coeff = ptr1 -> coeff + ptr2 -> coeff;
-            start3 = add_node(start4, sub_coeff, ptr1 -> pow);
+            sub_coeff = ptr1 -> coeff - ptr2 -> coeff;
+            start4 = add_node(start4, sub_coeff, ptr1 -> pow);
             ptr1 = ptr1 -> next;
             ptr2 = ptr2 -> next;
         }
@@ -192,17 +191,15 @@ struct node *sub_poly(struct node *start1, struct node *start2, struct node *sta
             start4 = add_node(start4, ptr1 -> coeff, ptr1 -> pow);
             ptr1 = ptr1 -> next;
         }
-        else if(ptr1 -> pow < ptr2 -> pow)
+        else if(ptr2 -> pow > ptr1 -> pow)
         {
-            sub_coeff = -1 * ptr2 -> coeff;
-            start4 = add_node(start4, sub_coeff, ptr2 -> pow);
+            start4 = add_node(start4, ptr2 -> coeff, ptr2 -> pow);
             ptr2 = ptr2 -> next;
         }
     }
     if(ptr1 == NULL){
         while(ptr2 != NULL){
-            sub_coeff = -1 * ptr2 -> coeff;
-            start4 = add_node(start4, sub_coeff, ptr2 -> pow);
+            start4 = add_node(start4, ptr2 -> coeff, ptr2 -> pow);
             ptr2 = ptr2 -> next;
         }
     }
