@@ -3,7 +3,18 @@ using namespace std;
 
 // CODE INCOMPLETE
 
-int main(){
+int findMin(int arr[], int k, int n, int pos){
+    int min = arr[k], pos = k;
+    for(int i=k+1;i<=n;i++){
+        if(min > arr[i]){
+            min = arr[i];
+            return min;
+        }
+    }
+}
+
+int main()
+{
     int n, x, i, temp;
     cout << "\nHow many input items are there? ";
     cin >> n;
@@ -17,16 +28,10 @@ int main(){
     cout << "\nThe input array is: ";
     for(i=0;i<n;i++){cout << a[i] << " ";}
 
-    cout << "\nThe sorted array is: ";
-    for (i=1; i<=n; i++){
-        if (a[i] <  a[i-1]){
-            temp = a[i];
-            a[i] = a[i-1];
-            a[i-1] = temp; 
-        }
-
-
-        cout << a[i-1] << " ";
+    for(i=0;i<n-1;i++){
+        int min = i;
+        
+        
     }
     return 0;
-} 
+}
