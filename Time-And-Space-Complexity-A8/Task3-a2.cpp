@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Fibonacci through iteration
 int main()
 {
     int num, f0 = 0, f1 = 1, fi = 0;
