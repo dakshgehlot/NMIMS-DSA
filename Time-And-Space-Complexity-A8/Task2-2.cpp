@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Factorial through recursion
 class Factorial{
     int fact;
 public:

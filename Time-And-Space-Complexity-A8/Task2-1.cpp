@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Factorial through iteration
 class Factorial{
     int fact = 1;
 public:
