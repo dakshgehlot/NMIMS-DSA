@@ -18,8 +18,8 @@ public:
 int main(){
     Factorial fact;
     int n;
-    cout << "Enter the number: ";
+    cout << "\nEnter the number: ";
     cin >> n;
-    cout << "Factorial is: " << fact.factorial(n);
+    cout << "\nFactorial is: " << fact.factorial(n);
     return 0;
 }

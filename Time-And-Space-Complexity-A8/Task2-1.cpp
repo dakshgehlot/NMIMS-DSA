@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Daksh Gehlot - N230
 // Factorial through iteration
 class Factorial{
     int fact = 1;
@@ -11,13 +12,12 @@ public:
         }
     }
     void show(){
-        cout << "Factorial is: " << fact;
+        cout << "\nFactorial is: " << fact;
     }
 };
 
 int main()
 {
-    int fact;
     Factorial A(5);
     A.show();
     return 0;
