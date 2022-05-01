@@ -8,9 +8,6 @@ void enQueue(){
     if (front == 0 && rear == max - 1){
         cout << "\nOverflow!";
     }
-    else if (front == rear + 1){
-        cout << "\nOverflow!";
-    }
     else{
         if (front == -1 && rear == -1){
             front = rear = 0;
